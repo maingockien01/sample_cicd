@@ -17,3 +17,10 @@ jobs:
         uses: olafurpg/setup-scala@v10
       - name: Unit test
         run: sbt test
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2.9.0
+        if: always()
+        with:
+          files: |
+            target/test-reports/**/*.xml
+
