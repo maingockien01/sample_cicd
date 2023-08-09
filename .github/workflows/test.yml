@@ -1,4 +1,4 @@
-name: Sample CI Test
+name: CI
 on:
   push:
     branches:
