@@ -16,6 +16,8 @@ scalaVersion := "2.13.8"
 name := "hello-world"
 organization := "ch.epfl.scala"
 version := "1.0"
+val AkkaVersion = "2.8.0"
+val AkkaHttpVersion = "10.5.0"
 
 // Note, it's not required for you to define these three settings. These are
 // mostly only necessary if you intend to publish your library's binaries on a
@@ -28,6 +30,19 @@ version := "1.0"
 libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "2.1.1"
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.16"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.16" % "test"
+
+libraryDependencies ++= Seq(
+      "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
+      "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
+      "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
+      "com.typesafe.akka" %% "akka-discovery" % AkkaVersion,
+      "com.typesafe.akka" %% "akka-http-spray-json" % AkkaHttpVersion,
+      "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion,
+      "com.lightbend.akka" %% "akka-stream-alpakka-sse" % "5.0.0",
+      "com.typesafe.akka" %% "akka-persistence-typed" % AkkaVersion,
+      "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % "it,test",
+      "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion % "it,test"
+    )
 
 // Here, `libraryDependencies` is a set of dependencies, and by using `+=`,
 // we're adding the scala-parser-combinators dependency to the set of dependencies
@@ -77,3 +92,4 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.16" % "test"
 
 // To learn more about multi-project builds, head over to the official sbt
 // documentation at http://www.scala-sbt.org/documentation.html
+

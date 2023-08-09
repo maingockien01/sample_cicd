@@ -1,6 +1,8 @@
 package main
 
-class Person (val name: String) {
+import spray.json.DefaultJsonProtocol._
+
+case class Person (val name: String) {
 
     def introduce(): String = s"Hi, I am $name"
 
