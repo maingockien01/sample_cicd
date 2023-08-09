@@ -1,4 +1,3 @@
-yaml
 name: Sample CI Test
 on:
   push:
